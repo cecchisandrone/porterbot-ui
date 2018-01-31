@@ -21,7 +21,7 @@ jobs:
           no_output_timeout: 30m
 workflows:
   version: 2
-  build-and-deploy:ssh -o StrictHostKeyChecking=no -l pi $PORTERBOT_SSH_HOST -p $PORTERBOT_SSH_PORT "docker pull repo.treescale.com/cecchisandrone/porterbot-ui && docker rm -f porterbot-ui || true &&  docker run --name porterbot-ui -p 80:80 --restart always -d repo.treescale.com/cecchisandrone/porterbot-ui"
+  build-and-deploy: ssh -o StrictHostKeyChecking=no -l pi $PORTERBOT_SSH_HOST -p $PORTERBOT_SSH_PORT "docker pull repo.treescale.com/cecchisandrone/porterbot-ui && docker rm -f porterbot-ui || true &&  docker run --name porterbot-ui -p 80:80 --restart always -d repo.treescale.com/cecchisandrone/porterbot-ui"
     jobs:
       - build
       - deploy:
