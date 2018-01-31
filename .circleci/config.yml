@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build_ui:
+  build:
     machine:
       enabled: true
     steps:
