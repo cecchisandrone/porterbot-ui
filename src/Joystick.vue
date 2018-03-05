@@ -1,9 +1,8 @@
 <template>
   <div>
-    Joystick {{ data }}
-    <div id="result"></div>
     <div id="joystick" style="width: 400px; height: 400px; position: absolute; border: 2px solid blue">
     </div>
+    <div id="result"></div>    
   </div>
 </template>
 
@@ -43,9 +42,9 @@ export default {
     var that = this
     setInterval(function() {
       var outputEl	= document.getElementById('result');
-      outputEl.innerHTML	= '<b>Result:</b> '
-        + ' dx:'+ that.joystick.deltaX()
-        + ' dy:'+ that.joystick.deltaY()
+      outputEl.innerHTML	= '<b>Position:</b> '
+        + ' x:'+ that.joystick.deltaX()
+        + ' y:'+ that.joystick.deltaY()
         + (that.joystick.right()	? ' right'	: '')
         + (that.joystick.up()	? ' up'		: '')
         + (that.joystick.left()	? ' left'	: '')

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <div class="col-md-6">
+      <div class="col-sm-6">
         <joystick></joystick>
       </div>  
-      <div class="col-md-6">
-        <img src="http://porterbot:9090/stream/video.mjpeg"/>
+      <div class="col-sm-6">
+        <img width="640" src="http://porterbot:9090/stream/video.mjpeg"/>
       </div>
     </div>
   </div>
