@@ -2,7 +2,8 @@
   <div>
     <div id="joystick" style="width: 400px; height: 400px; position: absolute; border: 2px solid blue">
     </div>
-    <div id="result"></div>    
+    <div id="result"></div>
+    Touch: {{touchStatus}}
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   props: {},
   data () {
     return {
-      data: 'adsasddsada',
+      touchStatus: '',
       joystick: null,
       socket: null
     }
@@ -55,9 +56,11 @@ export default {
   methods: {
     touchStart: function() {
       console.log('touchStart')
+      this.touchStatus = 'touchStart'
     },
     touchEnd: function() {
       console.log('touchEnd')
+      this.touchStatus = 'touchEnd'
       this.joystick.resetDelta()
       var joystickState = {x: 0, y: 0};
       this.$socket.emit('joystickState', joystickState);
