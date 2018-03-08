@@ -5,7 +5,7 @@
         <joystick></joystick>
       </div>  
       <div class="col-sm-6">
-        <img width="640" src="http://porterbot:9090/stream/video.mjpeg"/>
+        <img width="640" src="http://192.168.1.109:9090/stream/video.mjpeg"/>
       </div>
     </div>
   </div>
