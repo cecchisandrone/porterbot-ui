@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="joystick" style="width: 400px; height: 400px; position: absolute; border: 2px solid blue">
+    <div id="joystick">
     </div>
     <div id="result"></div>
     Touch: {{touchStatus}}
@@ -28,10 +28,10 @@ export default {
 
     this.joystick = new VirtualJoystick({
       stationaryBase: true,
-      baseX: 200,
-      baseY: 200,
+      baseX: 225,
+      baseY: 225,
       limitStickTravel: true,
-      stickRadius: 150,
+      stickRadius: 175,
       mouseSupport: true,
       container: document.getElementById('joystick')
     });
@@ -44,8 +44,8 @@ export default {
     setInterval(function() {
       var outputEl	= document.getElementById('result');
       outputEl.innerHTML	= '<b>Position:</b> '
-        + ' x:'+ that.joystick.deltaX()
-        + ' y:'+ that.joystick.deltaY()
+        + ' x:'+ that.joystick.deltaX().toFixed(1)
+        + ' y:'+ that.joystick.deltaY().toFixed(1)
         + (that.joystick.right()	? ' right'	: '')
         + (that.joystick.up()	? ' up'		: '')
         + (that.joystick.left()	? ' left'	: '')

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <div class="col-sm-6">
+      <div style="width: 450px; height: 450px; border: 2px solid blue" class="col-sm-6">
         <joystick></joystick>
       </div>  
       <div class="col-sm-6">
