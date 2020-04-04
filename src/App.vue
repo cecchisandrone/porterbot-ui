@@ -2,11 +2,13 @@
   <div id="app">
     <div class="container-fluid">
       <div style="width: 450px; height: 450px; border: 2px solid blue" class="col-sm-6">
-        <joystick></joystick>
-      </div>  
-      <div class="col-sm-6">
-        <img width="480" src="http://192.168.1.20:9090/stream/video.mjpeg"/>
-      </div>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">Enable camera view</label>
+        <joystick></joystick>        
+      </div>        
+      <div v-if="checked" class="col-sm-6">
+        <img width="480" src="http://192.168.1.20:9090/stream/video.mjpeg"/>        
+      </div>      
     </div>
   </div>
 </template>
@@ -17,7 +19,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'PorterbotUI'
+      msg: 'PorterbotUI',
+      checked: false
     }
   },
   components: {
