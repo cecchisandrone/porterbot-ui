@@ -1,4 +1,0 @@
-FROM tobi312/rpi-nginx
-ADD dist /var/www/html/dist
-ADD index.html /var/www/html
-ADD nginx/default /etc/nginx/sites-available/default
