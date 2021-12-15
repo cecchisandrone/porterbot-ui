@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          docker build -t cecchisandrone/porterbot-ui:latest ./porterbot-ui
+          docker build -t cecchisandrone/porterbot-ui:latest .
           docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD
           docker push cecchisandrone/porterbot-ui:latest
   deploy:
